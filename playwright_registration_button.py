@@ -19,4 +19,4 @@ with sync_playwright() as playwright:
     password_input = page.locator('//div[@data-testid="registration-form-password-input"]//input')
     password_input.fill('password')
 
-    expect(registration_button_page).to_be_enabled()
+    expect(registration_button_page).to_be_enabled() 
