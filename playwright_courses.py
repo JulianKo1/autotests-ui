@@ -39,7 +39,7 @@ with sync_playwright() as playwright:
     expect(no_results_title).to_have_text(expected='There is no results')
 
     empty_folder_svg = page.locator("//*[local-name()='svg' and @data-testid='courses-list-empty-view-icon']")
-    empty_folder_svg.is_visible()
+    expect(empty_folder_svg).to_be_visible()
 
     no_results_description = page.locator('//p[@data-testid="courses-list-empty-view-description-text"]')
     expect(no_results_description).to_be_visible()
