@@ -15,14 +15,3 @@ def chromium():
         page = browser.new_page()
         yield page
         browser.close()
-
-def test_chromium(chromium):
-    chromium.goto('https://bpmsoft.ru/')
-    chromium.wait_for_timeout(4000)
-
-@pytest.fixture(autouse=True)
-def user_data():
-    print("Autousing")
-
-def test_autouse():
-    ...
