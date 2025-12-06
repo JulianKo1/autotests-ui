@@ -30,7 +30,8 @@ def chromium_page_with_state(initialize_browser_state, playwright: Playwright) -
     browser.close()
 
 @pytest.fixture
-def chromium_page_without_state(playwright: Playwright):
+def chromium_page(playwright: Playwright) -> Page:
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
-    return page
+    yield page
+    browser.close()
