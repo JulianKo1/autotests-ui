@@ -14,7 +14,7 @@ class CoursesPage(BasePage):
         # Блок при отсутствии курсов
         self.empty_folder_icon = page.locator('//*[@data-testid="courses-list-empty-view-icon"]')
         self.empty_page_title = page.locator('//h6[@data-testid="courses-list-empty-view-title-text"]')
-        self.empty_page_description = page.locator('data-testid="courses-list-empty-view-description-text"')
+        self.empty_page_description = page.locator('//p[@data-testid="courses-list-empty-view-description-text"]')
 
         # Карточка курса
         self.course_title = page.locator('//h6[@data-testid="course-widget-title-text"]')
