@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
 from pages.base_page import BasePage
+from components.navigation.navbar_component import NavbarComponent
 
 class DashboardPage (BasePage):
     def __init__(self, page: Page):
@@ -18,6 +19,8 @@ class DashboardPage (BasePage):
 
         self.scores_title = page.locator('//h6[@data-testid="scores-widget-title-text"]')
         self.scores_chart = page.locator('//div[@data-testid="scores-scatter-chart"]')
+
+        self.navbar_component = NavbarComponent(page)
     
     def check_visible_title(self):
         expect(self.page_title).to_be_visible()
