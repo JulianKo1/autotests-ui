@@ -3,7 +3,7 @@ import pytest
 
 @pytest.fixture
 def initialize_browser_state(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
     page.goto('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration')
@@ -30,7 +30,8 @@ def chromium_page_with_state(initialize_browser_state, playwright: Playwright) -
     browser.close()
 
 @pytest.fixture
-def chromium_page_without_state(playwright: Playwright):
-    browser = playwright.chromium.launch(headless=False)
+def chromium_page(playwright: Playwright) -> Page:
+    browser = playwright.chromium.launch(headless=True)
     page = browser.new_page()
-    return page
+    yield page
+    browser.close()
