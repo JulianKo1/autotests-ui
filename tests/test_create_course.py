@@ -7,6 +7,7 @@ from pages.courses_page import CoursesPage
 @pytest.mark.regression
 def test_create_course(create_course_page: CreateCoursePage, courses_page: CoursesPage):
     create_course_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
+    create_course_page.empty_view.check_visible(title='No image selected', description='Preview of selected image will be displayed here')
     create_course_page.check_visible_create_course_title()
     create_course_page.check_disabled_create_course_button()
     create_course_page.check_empty_view_preview_course_block()

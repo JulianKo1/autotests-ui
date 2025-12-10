@@ -1,9 +1,12 @@
 from pages.base_page import BasePage
 from playwright.sync_api import Page, expect
+from components.views.empty_view_component import EmptyViewComponent
 
 class CreateCoursePage(BasePage):
     def __init__(self, page: Page):
         super().__init__(page)
+
+        self.empty_view = EmptyViewComponent(page, 'create-course-preview')
 
         # Заголовок и кнопка создания курса
         self.create_course_page_title = page.locator('//h6[@data-testid="create-course-toolbar-title-text"]')
