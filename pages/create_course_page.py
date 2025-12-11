@@ -42,7 +42,7 @@ class CreateCoursePage(BasePage):
         # Пустой блок для упражнений
         self.empty_excercises_icon = page.locator('//*[@data-testid="create-course-exercises-empty-view-icon"]')
         self.empty_excercises_title = page.locator('//h6[@data-testid="create-course-exercises-empty-view-title-text"]')
-        self.empty_excercises_description = page.locator('//p[@data-testid="create-course-exercises-empty-view-description-text"]')
+        self.empty_excercises_description = page.locator('//p[@data-testid="create-course-exercises-empty-view-description-text"]') 
 
     def check_visible_create_course_title(self):
         expect(self.create_course_page_title).to_be_visible()
