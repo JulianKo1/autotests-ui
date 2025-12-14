@@ -7,8 +7,8 @@ from pages.courses_page import CoursesPage
 from pages.create_course_page import CreateCoursePage
 
 @pytest.fixture
-def login_page(chromium_page_without_state: Page) -> LoginPage:
-    return LoginPage(page=chromium_page_without_state)
+def login_page(chromium_page_with_state: Page) -> LoginPage:
+    return LoginPage(page=chromium_page_with_state)
 
 @pytest.fixture
 def registration_page(chromium_page: Page) -> RegistrationPage:
