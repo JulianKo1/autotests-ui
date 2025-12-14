@@ -1,6 +1,6 @@
 from pages.base_page import BasePage
 from playwright.sync_api import Page, expect
-from components.courses.authentication.login_form_component import LoginFormComponent
+from components.authentication.login_form_component import LoginFormComponent
 from components.navigation.sidebar_component import SidebarComponent
 
 class LoginPage(BasePage):
