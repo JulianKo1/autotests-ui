@@ -24,3 +24,5 @@ def test_create_course(create_course_page: CreateCoursePage, courses_page: Cours
     # courses_page.check_visible_courses_page_title()
     # courses_page.check_visible_courses_button()
     courses_page.course_card.check_visible(index=0, title='Playwright', max_score='100', min_score='10', time_estim='2 weeks')
+    courses_page.toolbar.check_visible()
+    courses_page.toolbar.click_create_course_button()
