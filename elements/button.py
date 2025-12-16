@@ -5,10 +5,10 @@ class Button(BaseElement):
     def __init__(self, page: Page, locator: str, name: str):
         super.__init__(page, locator, name)
     
-    def check_disabled(self, **kwargs):
-        locator = self.get_locator(**kwargs)
+    def check_disabled(self, nth: int = 0, **kwargs):
+        locator = self.get_locator(nth, **kwargs)
         expect(locator).to_be_disabled()
     
-    def check_enabled(self, **kwargs):
-        locator = self.get_locator(**kwargs)
+    def check_enabled(self, nth: int = 0, **kwargs):
+        locator = self.get_locator(nth, **kwargs)
         expect(locator).to_be_enabled()
